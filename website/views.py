@@ -6,3 +6,8 @@ viewss = Blueprint('views', __name__)
 def home():
     return render_template("home.html")
 
+
+@viewss.route('/second')
+def second():
+    return render_template("second.html")
+

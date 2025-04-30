@@ -1,7 +1,37 @@
 {%extends "base.html" %} {%block title %} Clue Me In {% endblock %}
-
-
 {% block content %}
-<h1> Project Invent </h1>
+<div class="container" style="background-color: orange;">
+    <section class="language-section">
+        <h1>Choose Your Language</h1>
+        <div  class="" style="background-color: #b8871e; color:white ;padding: 15px;">
+           <h1 style ="color: #fff">English</h1>
+            <p style ="color: #fff;">Continue browsing our platform in English to Sign In</p>
+            <a href="/second"><button style="height:20px;width: 80px ;" href="/second" class="language-button">English</button></a>
+        </div>
+        <div class="language-option"style= "margin-top:10px; background-color: #b8871e; color:white ;padding: 15px;">
+            <h2  style ="color: #fff">Español</h2>
+            <p style ="color: #fff">Continúe navegando nuestra plataforma en español para iniciar sesión</p>
+            <button style="height: 20px;width: 80px; ;" onclick="window.location.href='home';">Espanol</button>        </div>
+        </section>
 
+    <section class="contact-section" style="background-color: rgb(4, 8, 70);">
+        <h2 style ="color: #fff" class="contact-title">Contact Our Team</h2>
+        <div class="contact-info-container">
+            <div class="contact-item">
+                <h3 style ="color: #fff">Call Us</h3>
+                <p  style ="color: #fff">651-379-4200 Monday-Friday, 8am-8pm EST.</p>
+            </div>
+            <div class="arrow-separator"></div>
+            <div class="contact-item">
+                <h3  style ="color: #fff">Email Us</h3>
+                <p  style ="color: #fff">Send your questions to <a href="mailto:info@clues.org" style="color: #fff; text-decoration: underline;">info@clues.org</a></p>
+            </div>
+            <div class="arrow-separator"></div>
+            <div class="contact-item">
+                <h3  style ="color: #fff">Visit Us</h3>
+                <p  style ="color: #fff">CLUES (Comunidades Latinas Unidas En Servicio) Address: 797 7th St E, Saint Paul, MN 55106 Phone: (651) 379-4200</p>
+            </div>
+        </div>
+    </section>
+</div>
 {% endblock %}
