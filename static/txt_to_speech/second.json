@@ -1,0 +1,15 @@
+{
+  "Sentence_1": "Choose Your Language",
+  "pause1": 0.8,
+  "englishOption": {
+    "Sentence_2": "English",
+    "Sentence_3": "Continue browsing our platform in English to Sign In.",
+    "Sentence_4": "Press the Continue with English button."
+  },
+  "pause2": 1.2,
+  "spanishOption": {
+    "Sentence_5": "Español",
+    "Sentence_6": "Continúe navegando nuestra plataforma en español para iniciar sesión.",
+    "Sentence_7": "Presiona el botón Continuar en Español."
+  }
+}

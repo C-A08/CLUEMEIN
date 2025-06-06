@@ -1,0 +1,17 @@
+{%extends "base.html" %} {%block title %} Clue Me In {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1 style="font-size: 100px;">¡Registro Exitoso!</h1>
+    <p style="font-size: 30px;">¡Estás registrado!</p>
+    <p style="font-size: 30px;">Por favor espera en el lobby hasta que llamen tu nombre.</p>
+    <p style="font-size: 30px;">¡Gracias por usar Clue-Me-In!</p>
+    <div class="logo">
+        <img src="\static\manman.png" width="500px" height="400px" alt="Clue Me In Logo" class="logo-image">
+    </div>
+
+<div style="color: white; padding: 20px;">
+    <button onclick="window.location.href='/';" style="width: 400px; height: 60px; font-size: 30px; font-family: Arial, sans-serif; color: black; background-color: lightgray; border: none; border-radius: 15px;">Empezar de Nuevo</button>
+</div>
+{% endblock %}

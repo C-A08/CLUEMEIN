@@ -1,13 +1,106 @@
 {%extends "base.html" %} {%block title %} Clue Me In {% endblock %}
 
-
 {% block content %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5; /* Light gray background for a clean look */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Align content to the top with headroom */
+        text-align: center;
+        min-height: 100vh;
+        padding: 100px 20px; /* Increased top padding for more headroom */
+        background-color: #e76c15; /* Vibrant orange background */
+        color: white;
+    }
+
+    h2 {
+        font-size: 36px;
+        margin-bottom: 40px; /* Add space below the heading */
+        color: #ffffff;
+    }
+
+    .language-options {
+        display: flex;
+        flex-direction: column; /* Arrange options vertically */
+        align-items: center; /* Center the blocks horizontally */
+        gap: 20px; /* Add space between the options */
+        width: 100%;
+        max-width: 400px; /* Limit the width of the container */
+        padding: 0 20px; /* Add padding to ensure even spacing on both sides */
+        box-sizing: border-box; /* Include padding in width calculations */
+        margin: 0 auto; /* Center the language options */
+    }
+
+    .language-option {
+        background-color: #ffffff;
+        color: #000000;
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%; /* Take up the full width of the language-options container */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for a modern look */
+        text-align: center;
+    }
+
+    .language-option h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .language-option p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .language-option button {
+        height: 50px; /* Increased height */
+        width: 100%;
+        background-color: #b6ada7; /* Neutral button color */
+        color: #000000;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px; /* Increased font size */
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .language-option button:hover {
+        background-color: #000000; /* Darker color on hover */
+        color: #ffffff;
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+</style>
+
 <div class="container">
-    <h1 style="font-size: 100px;">Welcome to Clue Me In!</h1>
-    <p style="font-size: 35px;">Streamlining volunteer and employee check-in with ease.</p>
-    <div class="logo">
-        <img src="\static\manman.png" width="400px" height="300px" alt="Clue Me In Logo" class="logo-image">
-        <button style="font-size: 45px;"onclick="window.location.href='second' class="logo-text">Continue</button>
+    <h2>Choose Your Language</h2>
+
+    <div class="language-options">
+        <!-- English Option -->
+        <div class="language-option">
+            <h1>English</h1>
+            <img src="/static/ELang.png" alt="English Language" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+            <p>Continue browsing our platform in English to Sign In</p>
+            <a href="/third">
+                <button>Continue with English</button>
+            </a>
+        </div>
+
+        <!-- Spanish Option -->
+        <div class="language-option">
+            <h1>Español</h1>
+            <img src="/static/SLang.png" alt="Spanish Language" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+            <p>Continúe navegando nuestra plataforma en español para iniciar sesión</p>
+            <button onclick="window.location.href='spanishVersion';">Continuar en Español</button>
+        </div>
     </div>
 </div>
 {% endblock %}

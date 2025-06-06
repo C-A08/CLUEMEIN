@@ -44,3 +44,56 @@ p {
     font-weight: bold;
     font-size: 1.2em;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content {
+    flex: 1;
+  }
+
+  .contact-section {
+    background-color: rgb(4, 8, 70);
+    padding: 30px 20px;
+    color: white;
+    margin-top: auto; /* Push to bottom */
+  }
+
+  .contact-title,
+  .contact-item h3,
+  .contact-item p,
+  .contact-item a {
+    color: #fff;
+  }
+
+  .contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .arrow-separator {
+    height: 1px;
+    background-color: #ccc;
+    opacity: 0.2;
+  }
+
+  /* @media (min-width: 768px) {
+    .contact-info-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .contact-item {
+      flex: 1;
+      padding: 0 10px;
+    }
+
+    .arrow-separator {
+      width: 1px;
+      height: auto;
+    }
+  } */

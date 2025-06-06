@@ -1,0 +1,7 @@
+{
+  "greeting": "Welcome to Clue-Me-In!",
+  "pause1": 1.0,
+  "description": "We are streamlining volunteer and employee check-in with ease.",
+  "pause2": 1.5,
+  "instruction": "To begin, press the Clue Me In button."
+}

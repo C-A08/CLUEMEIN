@@ -1,0 +1,217 @@
+{%extends "base.html" %} {%block title %} Clue Me In {% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #1a1a1a;
+        color: #333333;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .container {
+        background-color: #333333;
+        padding: 20px 15px; /* Adjusted padding for smaller screens */
+        border-radius: 10px;
+        width: 100%;
+        max-width: 1200px; /* Limit the container width */
+        max-height: 100vh; /* Fit within the vertical screen */
+        overflow-y: auto; /* Allow vertical scrolling if content overflows */
+        margin: 0 auto; /* Center the container */
+    }
+
+    h1 {
+        color: #ff9800;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 28px; /* Adjusted font size for smaller screens */
+    }
+
+    p {
+        text-align: center;
+        font-size: 14px; /* Adjusted font size for readability */
+        color: #cccccc;
+        margin-bottom: 20px;
+        line-height: 1.5; /* Increased line spacing */
+    }
+
+    .department-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 3 columns per row */
+        gap: 15px; /* Reduced gap for smaller screens */
+        list-style: none;
+        padding: 0;
+        margin: 0 auto; /* Center the grid */
+    }
+
+    .department-item {
+        background-color: #444444;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+
+    .department-item button {
+        background: none;
+        border: none;
+        color: #ff9800;
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+        font-size: 16px; /* Adjusted font size */
+        font-weight: bold;
+    }
+
+    .department-item button:hover {
+        color: #e67e00;
+    }
+
+    .department-description {
+        padding: 10px 15px;
+        background-color: #555555;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: none;
+        font-size: 14px;
+        color: #cccccc;
+    }
+
+    .department-item.expanded .department-description {
+        display: block;
+    }
+
+    .check-in-highlight {
+        font-weight: bold;
+        color: #ff9800; /* Orange color to match the header */
+        font-size: 16px; /* Slightly larger font size */
+    }
+
+    .bottom-button-container {
+        text-align: center;
+        margin-top: 20px;
+        display: flex; /* Use flexbox to align buttons side by side */
+        justify-content: center; /* Center buttons horizontally */
+        gap: 20px; /* Add some space between the buttons */
+    }
+
+    .bottom-button-container button {
+        background-color: #ff9800;
+        color: #333333;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+</style>
+
+<div class="container">
+    <h1>Department Information</h1>
+    <p>Click on a department to learn more about it.</p>
+    <ul class="department-list">
+        <li class="department-item">
+            <button onclick="toggleDepartment(this)">Health Department</button>
+            <div class="department-description">
+                <p>The Health Department is dedicated to promoting employee well-being and ensuring a safe and healthy work environment. We offer a range of services, including wellness programs, health education, and resources for managing stress and maintaining a balanced lifestyle.</p>
+                <p>Learn more about our wellness programs and health regulations.</p>
+                <p>Scan the QR code for more information:</p>
+                <img src="/static/HealthWellness.png" alt="Health Department QR Code" style="width: 60%; border-radius: 8px; margin-bottom: 10px;">
+                <p class="check-in-highlight">Check-in for your appointment:</p>
+                <button onclick="window.location.href='/Google_form';">Check-In Form</button>
+            </div>
+        </li>
+        <li class="department-item">
+            <button onclick="toggleDepartment(this)">Class Department</button>
+            <div class="department-description">
+                <p>The Class Department is committed to providing opportunities for professional development and continuous learning. We offer a variety of training sessions, workshops, and educational programs designed to enhance your skills and knowledge.</p>
+                <p>Explore our training sessions and educational programs.</p>
+                <p>Scan the QR code for more information:</p>
+                <img src="/static/Classes_Dept.png" alt="Class Department QR Code" style="width: 60%; border-radius: 8px; margin-bottom: 10px;">
+                <p class="check-in-highlight">Check-in for your appointment:</p>
+                <button onclick="window.location.href='/Google_form';">Check-In Form</button>
+            </div>
+        </li>
+        <li class="department-item">
+            <button onclick="toggleDepartment(this)">HR Department</button>
+            <div class="department-description">
+                <p>The HR Department is here to support you with all your human resources needs. Whether you have questions about recruitment, employee relations, or benefits, our team is ready to assist you.</p>
+                <p>Get assistance with recruitment, employee relations, and benefits.</p>
+                <p>Scan the QR code for more information:</p>
+                <img src="/static/SurvivorSupport.png" alt="HR Department QR Code" style="width: 60%; border-radius: 8px; margin-bottom: 10px;">
+                <p class="check-in-highlight">Check-in for your appointment:</p>
+                <button onclick="window.location.href='/Google_form';">Check-In Form</button>
+            </div>
+        </li>
+        <li class="department-item">
+            <button onclick="toggleDepartment(this)">Financial Department</button>
+            <div class="department-description">
+                <p>Manage budgets, forecasts, and financial planning.</p>
+                <p class="check-in-highlight">Check-in for your appointment:</p>
+                <button onclick="window.location.href='/Google_form';">Check-In Form</button>
+            </div>
+        </li>
+        <li class="department-item">
+            <button onclick="toggleDepartment(this)">Business Department</button>
+            <div class="department-description">
+                <p>Strategic planning, partnerships, and market analysis to drive growth.</p>
+                <p class="check-in-highlight">Check-in for your appointment:</p>
+                <button onclick="window.location.href='/Google_form';">Check-In Form</button>
+            </div>
+        </li>
+        <li class="department-item">
+            <button onclick="toggleDepartment(this)">IT Department</button>
+            <div class="department-description">
+                <p>Manage technology infrastructure and ensure data security.</p>
+                <p class="check-in-highlight">Check-in for your appointment:</p>
+                <button onclick="window.location.href='/Google_form';">Check-In Form</button>
+            </div>
+        </li>
+        <li class="department-item">
+            <button onclick="toggleDepartment(this)">Marketing Department</button>
+            <div class="department-description">
+                <p>Develop campaigns to promote the organization's services and brand.</p>
+                <p class="check-in-highlight">Check-in for your appointment:</p>
+                <button onclick="window.location.href='/Google_form';">Check-In Form</button>
+            </div>
+        </li>
+        <li class="department-item">
+            <button onclick="toggleDepartment(this)">Operations Department</button>
+            <div class="department-description">
+                <p>Ensure smooth day-to-day functioning of the organization.</p>
+                <p class="check-in-highlight">Check-in for your appointment:</p>
+                <button onclick="window.location.href='/Google_form';">Check-In Form</button>
+            </div>
+        </li>
+        <li class="department-item">
+            <button onclick="toggleDepartment(this)">Legal Department</button>
+            <div class="department-description">
+                <p>Provide legal advice and ensure compliance with regulations.</p>
+                <p class="check-in-highlight">Check-in for your appointment:</p>
+                <button onclick="window.location.href='/Google_form';">Check-In Form</button>
+            </div>
+        </li>
+    </ul>
+    <div class="bottom-button-container">
+        <button onclick="window.location.href='/Map';">Go to Interactive Map</button>
+        <button onclick="window.location.href='/';">Start Over</button>
+    </div>
+</div>
+
+<script>
+    function toggleDepartment(button) {
+        // Collapse all other sections
+        const allItems = document.querySelectorAll('.department-item');
+        allItems.forEach(item => {
+            if (item.contains(button)) {
+                item.classList.toggle('expanded'); // Toggle the clicked item
+            } else {
+                item.classList.remove('expanded'); // Collapse others
+            }
+        });
+    }
+</script>
+{% endblock %}

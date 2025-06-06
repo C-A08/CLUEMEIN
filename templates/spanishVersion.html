@@ -1,0 +1,148 @@
+{%extends "base.html" %} {%block title %} Infórmame {% endblock %}
+
+{% block content %}
+ <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #333333;
+         
+           
+            justify-content: center;
+            
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #333333;
+            padding: 30px;
+            border-radius: 0%;
+        
+            width: 100%;
+            max-width: 92%;
+        }
+
+        h1 {
+            color: #ff9800;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+        .department-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .department-item {
+            background-color: #444444;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        
+    
+
+        .department-item button {
+            background: none;
+            border: none;
+            color: #ff9800;
+            padding: 10px 0;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .department-item button:hover {
+            color: #e67e00;
+        }
+
+        .department-item button::before {
+            content: "▶";
+            margin-right: 10px;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .department-item.expanded button::before {
+            content: "▼";
+        }
+
+        .department-description {
+            padding: 10px 20px;
+            background-color: #555555;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        .department-item.expanded .department-description {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Información de Departamentos</h1>
+        <p>Haz clic en un departamento para aprender más sobre él.</p>
+        <ul class="department-list">
+            <li class="department-item">
+                <button onclick="toggleDepartment(this)">Departamento Financiero</button>
+                <div class="department-description">
+                    <p>El Departamento Financiero gestiona presupuestos, pronósticos y planificación financiera para la organización.</p>
+                    <p>También se encargan del cumplimiento fiscal, auditorías y gestión de riesgos financieros.</p>
+                    <p>Para registrarse en una cita: </p><button onclick="window.location.href='/SpanishGoogleForm';">Formulario de Registro</button>
+                </div>
+            </li>
+            <li class="department-item">
+                <button onclick="toggleDepartment(this)">Departamento de Salud</button>
+                <div class="department-description">
+                    <p>El Departamento de Salud supervisa programas de bienestar para empleados y asegura el cumplimiento de las regulaciones de salud.</p>
+                    <p>También proporcionan educación en salud y gestionan iniciativas de seguridad en el lugar de trabajo.</p>
+                    <p>Para registrarse en una cita: </p><button onclick="window.location.href='/SpanishGoogleForm';">Formulario de Registro</button>
+                </div>
+            </li>
+            <li class="department-item">
+                <button onclick="toggleDepartment(this)">Departamento de Clases</button>
+                <div class="department-description">
+                    <p>El Departamento de Clases organiza sesiones de capacitación y programas educativos para el desarrollo del personal.</p>
+                    <p>También evalúan la efectividad de las capacitaciones y promueven oportunidades de aprendizaje continuo.</p>
+                    <p>Para registrarse en una cita: </p><button onclick="window.location.href='/SpanishGoogleForm';">Formulario de Registro</button>
+                </div>
+            </li>
+            <li class="department-item">
+                <button onclick="toggleDepartment(this)">Departamento de Negocios</button>
+                <div class="department-description">
+                    <p>El Departamento de Negocios se enfoca en la planificación estratégica, asociaciones y análisis de mercado para impulsar el crecimiento.</p>
+                    <p>También gestionan relaciones con clientes y exploran nuevas oportunidades de negocio.</p>
+                    <p>Para registrarse en una cita: </p><button onclick="window.location.href='/SpanishGoogleForm';">Formulario de Registro</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleDepartment(button) {
+            const listItem = button.parentNode;
+            listItem.classList.toggle('expanded');
+        }
+    </script>
+{% endblock %}

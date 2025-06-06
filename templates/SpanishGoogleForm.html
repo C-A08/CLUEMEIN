@@ -1,0 +1,18 @@
+{%extends "base.html" %} {%block title %} Clue Me In {% endblock %}
+
+{% block content %}
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdHzNnwFFTc2Z2xYc7xTjq4BsU09rBNlZfRum5hGdcyo9eMbg/viewform?usp=dialog&amp;embedded=true&amp;usp=embed_googleplus" frameborder="0" width="100%" height="1900px" allow="encrypted-media; camera; microphone" allowfullscreen="" title="Embedded app" sandbox="allow-forms allow-scripts allow-same-origin allow-modals allow-pointer-lock allow-popups" style="flex:1"></iframe>
+
+
+<div style="color: white; padding: 20px;">
+    <button onclick="window.location.href='/SpanishSuccess';" style="width: 200px; height: 45px; font-size: 16px; font-family: Arial, sans-serif; color: white; background-color: #686d72; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+        Continuar al siguiente paso
+    </button>
+    <style>
+        button:hover {
+            background-color: #000000;
+        }
+    </style>
+</div>
+{% endblock %}

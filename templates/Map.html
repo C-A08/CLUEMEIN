@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Map{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1a1a1a; /* Dark background */
+        color: #cccccc; /* Light text */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center content vertically */
+        min-height: 100vh;
+    }
+
+    .container {
+        text-align: center;
+        padding: 30px;
+        background-color: #333333; /* Dark container */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+        max-width: 800px; /* Limit container width */
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Image shadow */
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+
+    .button-group2 {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 0; /* Removed margin-bottom */
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: #ff9800; /* Orange button */
+        color: #333333; /* Dark text */
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    }
+
+    button:hover {
+        background-color: #e67e00; /* Darker orange on hover */
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+</style>
+
+<div class="container">
+    <img src="/static/Fone.png" alt="Map Image">
+
+    <div class="button-group">
+        <button>Floor 1</button>
+        <button>Floor 2</button>
+    </div>
+
+    <div class="button-group2">
+        <button onclick="window.location.href='/third';">Back to Department Info</button>
+        <button onclick="window.location.href='/';">Start Over</button>
+    </div>
+</div>
+{% endblock %}

@@ -1,37 +1,82 @@
 {%extends "base.html" %} {%block title %} Clue Me In {% endblock %}
-{% block content %}
-<div class="container" style="background-color: orange;">
-    <section class="language-section">
-        <h1>Choose Your Language</h1>
-        <div  class="" style="background-color: #b8871e; color:white ;padding: 15px;">
-           <h1 style ="color: #fff">English</h1>
-            <p style ="color: #fff;">Continue browsing our platform in English to Sign In</p>
-            <a href="/second"><button style="height:20px;width: 80px ;" href="/second" class="language-button">English</button></a>
-        </div>
-        <div class="language-option"style= "margin-top:10px; background-color: #b8871e; color:white ;padding: 15px;">
-            <h2  style ="color: #fff">Español</h2>
-            <p style ="color: #fff">Continúe navegando nuestra plataforma en español para iniciar sesión</p>
-            <button style="height: 20px;width: 80px; ;" onclick="window.location.href='home';">Espanol</button>        </div>
-        </section>
 
-    <section class="contact-section" style="background-color: rgb(4, 8, 70);">
-        <h2 style ="color: #fff" class="contact-title">Contact Our Team</h2>
-        <div class="contact-info-container">
-            <div class="contact-item">
-                <h3 style ="color: #fff">Call Us</h3>
-                <p  style ="color: #fff">651-379-4200 Monday-Friday, 8am-8pm EST.</p>
-            </div>
-            <div class="arrow-separator"></div>
-            <div class="contact-item">
-                <h3  style ="color: #fff">Email Us</h3>
-                <p  style ="color: #fff">Send your questions to <a href="mailto:info@clues.org" style="color: #fff; text-decoration: underline;">info@clues.org</a></p>
-            </div>
-            <div class="arrow-separator"></div>
-            <div class="contact-item">
-                <h3  style ="color: #fff">Visit Us</h3>
-                <p  style ="color: #fff">CLUES (Comunidades Latinas Unidas En Servicio) Address: 797 7th St E, Saint Paul, MN 55106 Phone: (651) 379-4200</p>
-            </div>
-        </div>
-    </section>
+{% block content %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Align content to the top with headroom */
+        text-align: center;
+        min-height: 120vh; /* Full viewport height */
+        padding: 70px 30px; /* Increased top padding for more headroom */
+        background-color: #f5f5f5; /* Light gray background */
+        box-sizing: border-box; /* Include padding in width/height calculations */
+    }
+
+    h1 {
+        font-size: 100px;
+        color: #ff9800; /* Orange text for emphasis */
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    p {
+        font-size: 30px;
+        color: #333333; /* Dark gray for readability */
+        margin-bottom: 40px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo img {
+        width: 400px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for a modern look */
+    }
+
+    .logo button {
+        font-size: 24px;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #ff9800; /* Orange button for consistency */
+        border: none;
+        border-radius: 8px;
+        padding: 15px 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .logo button:hover {
+        background-color: #e67e00; /* Darker orange on hover */
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+</style>
+
+<div class="container">
+    <h1>Welcome to Clue-Me-In!</h1>
+    <p>Streamlining volunteer and employee check-in with ease.</p>
+    <div class="logo">
+        <img src="\static\manman.png" alt="Clue Me In Logo" class="logo-image">
+        <button 
+            onclick="window.location.href='/second'" 
+            class="logo-text">
+            Clue Me In
+        </button>
+    </div>
 </div>
 {% endblock %}

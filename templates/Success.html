@@ -1,0 +1,60 @@
+{%extends "base.html" %} {%block title %} Clue Me In {% endblock %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: #977171 !important; /* Light gray background with higher priority */
+        font-family: Arial, sans-serif;
+        color: #ff9800; /* Orange text */
+        text-align: center;
+       
+    }
+
+    .container {
+        padding: 50px;
+    }
+
+    h1 {
+        font-size: 80px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .button-container {
+        margin-top: 30px;
+    }
+
+    .button-container button {
+        width: 300px;
+        height: 50px;
+        font-size: 20px;
+        font-family: Arial, sans-serif;
+        color: white;
+        background-color: #ff9800; /* Orange button */
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .button-container button:hover {
+        background-color: #e67e00; /* Darker orange on hover */
+    }
+</style>
+
+<div class="container">
+    <h1>Registration Successful!</h1>
+    <p>You are now registered!</p>
+    <p>Please wait in the lobby until your name is called.</p>
+    <p>Thank you for using Clue-Me-In!</p>
+    <div class="button-container">
+        <button onclick="window.location.href='/';">Start Over</button>
+    </div>
+</div>
+
+{% endblock %}
